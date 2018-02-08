@@ -70,9 +70,6 @@ public class Main {
              * =======================================================================================================
              */
             throw new RuntimeException(e);
-        } catch (UnsupportedOperationException){
-            ui.showReadOnlyError();
-            /** Catches error if storage is read only.  */
         }
 
     }
@@ -116,6 +113,10 @@ public class Main {
             CommandResult result = command.execute();
             storage.save(addressBook);
             return result;
+        } catch (StorageOperationException e){
+            ui.showToUser(e.getMessage());
+            ui.showReadOnlyError();
+            /** Catches error if storage is read only.  */
         } catch (Exception e) {
             ui.showToUser(e.getMessage());
             throw new RuntimeException(e);
