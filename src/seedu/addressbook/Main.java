@@ -1,5 +1,6 @@
 package seedu.addressbook;
 
+import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -69,7 +70,11 @@ public class Main {
              * =======================================================================================================
              */
             throw new RuntimeException(e);
+        } catch (UnsupportedOperationException){
+            ui.showReadOnlyError();
+            /** Catches error if storage is read only.  */
         }
+
     }
 
     /** Prints the Goodbye message and exits. */
