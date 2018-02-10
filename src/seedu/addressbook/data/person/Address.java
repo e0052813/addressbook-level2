@@ -9,8 +9,13 @@ import seedu.addressbook.data.exception.IllegalValueException;
 public class Address {
 
     public static final String EXAMPLE = "123, some street";
-    public static final String MESSAGE_ADDRESS_CONSTRAINTS = "Person addresses can be in any format";
-    public static final String ADDRESS_VALIDATION_REGEX = ".+";
+    public static final String MESSAGE_ADDRESS_CONSTRAINTS = "Person addresses to be in this format <Block, StreetName, Unit, PostalCode>";
+    public static final String ADDRESS_VALIDATION_REGEX = "[\\d{3}],[\\p{Alpha}]+,[\\d{2}]-[\\d{2,3}],[\\d{6}]";
+
+    public static final int BLOCK_INDEX = 0;
+    public static final int STREETNAME_INDEX = 1;
+    public static final int UNIT_INDEX = 2;
+    public static final int POSTALCODE_INDEX = 3;
 
     private Block block;
     private Street street;
@@ -60,5 +65,32 @@ public class Address {
 
     public boolean isPrivate() {
         return isPrivate;
+    }
+
+    /**
+     * Splits the trimmedAddress into BLOCK, StreetName, Unit and PostalCode.
+     * @param trimmedAddress
+     * @return
+     */
+
+    public String[] splitAddress(String trimmedAddress) {
+
+        String[] addressComponents = trimmedAddress.split(", ");
+
+        return addressComponents;
+    }
+
+    /**
+     * Extracts the Block StreetName, Unit and PostalCode from addressComponents
+     * @param addressComponents
+     */
+    public void extractAddress(String[] addressComponents){
+
+        block = new Block(addressComponents[BLOCK_INDEX]);
+        street = new Street(addressComponents[STREETNAME_INDEX]);
+        unit = new Unit(addressComponents[UNIT_INDEX]);
+        postalCode = new PostalCode(addressComponents[POSTALCODE_INDEX]);
+
+        return;
     }
 }
