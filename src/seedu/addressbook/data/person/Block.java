@@ -3,7 +3,7 @@ package seedu.addressbook.data.person;
 import seedu.addressbook.data.exception.IllegalValueException;
 
 /**
- * Represents a person's block number in the address
+ * Represents an Address's block number
  */
 
 public class Block {
@@ -11,7 +11,7 @@ public class Block {
     public static final String EXAMPLE = "123";
     public static final String MESSAGE_BLOCK_CONSTRAINTS =
             "Address Block should contains 3 numbers";
-    public static final String BLOCK_VALIDATION_REGEX = "[\\w\\d{3}]";
+    public static final String BLOCK_VALIDATION_REGEX = "[\\d{3}]";
 
     public final String value;
     private boolean isPrivate;
@@ -23,11 +23,11 @@ public class Block {
      */
     public Block(String block, boolean isPrivate) throws IllegalValueException {
         this.isPrivate = isPrivate;
-        String trimmedblock = block.trim();
-        if (!isValidBlock(trimmedblock)) {
+        String trimmedBlock = block.trim();
+        if (!isValidBlock(trimmedBlock)) {
             throw new IllegalValueException(MESSAGE_BLOCK_CONSTRAINTS);
         }
-        this.value = trimmedblock;
+        this.value = trimmedBlock;
     }
 
     /**
