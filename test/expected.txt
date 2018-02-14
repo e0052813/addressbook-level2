@@ -106,7 +106,7 @@
 || New person added: Charlie Dickson Phone: (private) 333333 Email: charlie.d@nus.edu.sg Address: 333, gamma street Tags: [school][friends]
 || ===================================================
 || Enter command: || [Command entered:  list]
-|| 	1. Adam Brown Phone: 111111 Email: adam@gmail.com Address: 111, alpha street Tags: Sequence Number: 1
+|| 	1. Adam Brown Phone: 111111 Email: adam@gmail.com Address: 111, alpha street Tags:  Sequence Number: 1
 || 	2. Betsy Choo Tags: [secretive] Sequence Number: 2
 || 	3. Charlie Dickson Email: charlie.d@nus.edu.sg Address: 333, gamma street Tags: [school][friends] Sequence Number: 3
 || 
@@ -116,7 +116,7 @@
 || New person added: Dickson Ee Phone: 444444 Email: (private) dickson@nus.edu.sg Address: 444, delta street Tags: [friends]
 || ===================================================
 || Enter command: || [Command entered:  list]
-|| 	1. Adam Brown Phone: 111111 Email: adam@gmail.com Address: 111, alpha street Tags: Sequence Number: 1
+|| 	1. Adam Brown Phone: 111111 Email: adam@gmail.com Address: 111, alpha street Tags:  Sequence Number: 1
 || 	2. Betsy Choo Tags: [secretive] Sequence Number: 2
 || 	3. Charlie Dickson Email: charlie.d@nus.edu.sg Address: 333, gamma street Tags: [school][friends] Sequence Number: 3
 || 	4. Dickson Ee Phone: 444444 Address: 444, delta street Tags: [friends] Sequence Number: 4
@@ -178,7 +178,7 @@
 || Viewing person: Adam Brown Phone: 111111 Email: adam@gmail.com Address: 111, alpha street Tags:  Sequence Number: 1
 || ===================================================
 || Enter command: || [Command entered:  viewall 1]
-|| Viewing person: Adam Brown Phone: 111111 Email: adam@gmail.com Address: 111, alpha street Tags:
+|| Viewing person: Adam Brown Phone: 111111 Email: adam@gmail.com Address: 111, alpha street Tags: 
 || ===================================================
 || Enter command: || [Command entered:  view 3]
 || Viewing person: Charlie Dickson Email: charlie.d@nus.edu.sg Address: 333, gamma street Tags: [school][friends] Sequence Number: 3
