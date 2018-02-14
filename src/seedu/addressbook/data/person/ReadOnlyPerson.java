@@ -13,7 +13,7 @@ public interface ReadOnlyPerson {
     Phone getPhone();
     Email getEmail();
     Address getAddress();
-    SequenceNumber getSequenceNumber();
+    int getSequenceNumber();
 
 
     /**
@@ -43,7 +43,8 @@ public interface ReadOnlyPerson {
                     && other.getPhone().equals(this.getPhone())
                     && other.getEmail().equals(this.getEmail())
                     && other.getAddress().equals(this.getAddress())
-                    && other.getTags().equals(this.getTags()));
+                    && other.getTags().equals(this.getTags()))
+                    && other.getSequenceNumber() == (this.getSequenceNumber());
     }
 
     /**
@@ -94,6 +95,7 @@ public interface ReadOnlyPerson {
         for (Tag tag : getTags()) {
             builder.append(tag);
         }
+        builder.append(" Sequence Number: ").append(getSequenceNumber());
         return builder.toString();
     }
 }
