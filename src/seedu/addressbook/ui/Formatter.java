@@ -95,7 +95,7 @@ public class Formatter {
             formatted.append(getIndexedListItem(displayIndex, listItem)).append("\n");
             displayIndex++;
         }
-        return formatted.toString();
+        return getFormattedMessage(formatted.toString());
     }
 
     /**
