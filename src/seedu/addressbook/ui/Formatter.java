@@ -30,6 +30,11 @@ public class Formatter {
     /** Format of a comment input line. Comment lines are silently consumed when reading user input. */
     private static final String COMMENT_LINE_FORMAT_REGEX = "#.*";
 
+    public static String getFormattedUserCommand(String fullInputLine) {
+
+        return getFormattedMessage("[Command entered:" + fullInputLine + "]");
+    }
+
     public static String getFormattedWelcomeMessage(String version, String storageFilePath) {
         String storageFileInfo = String.format(MESSAGE_USING_STORAGE_FILE, storageFilePath);
         return getFormattedMessage(

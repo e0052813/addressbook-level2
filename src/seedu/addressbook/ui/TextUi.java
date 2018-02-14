@@ -84,8 +84,7 @@ public class TextUi {
         while (shouldIgnore(fullInputLine)) {
             fullInputLine = in.nextLine();
         }
-
-        showToUser("[Command entered:" + fullInputLine + "]");
+        showToUser(Formatter.getFormattedUserCommand(fullInputLine));
         return fullInputLine;
     }
 
