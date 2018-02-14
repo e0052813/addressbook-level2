@@ -13,6 +13,8 @@ public interface ReadOnlyPerson {
     Phone getPhone();
     Email getEmail();
     Address getAddress();
+    SequenceNumber getSequenceNumber();
+
 
     /**
      * Returns a new TagList that is a deep copy of the internal TagList,
