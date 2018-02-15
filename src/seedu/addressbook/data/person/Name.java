@@ -39,8 +39,30 @@ public class Name {
     /**
      * Retrieves a listing of every word in the name, in order.
      */
-    public List<String> getWordsInName() {
-        return Arrays.asList(fullName.split("\\s+"));
+    public List<String> getLowerCaseWordsInName() {
+        return Arrays.asList(getLowerCaseString(fullName.split("\\s+")));
+    }
+
+    /**
+     * Returns the string in all lower case.
+     * @param arrayStringToConvert
+     * @return
+     */
+    public String[] getLowerCaseString(String[] arrayStringToConvert){
+        for(int i=0; i < arrayStringToConvert.length-1; i++) {
+        replaceStringInArrayToLowerCase(arrayStringToConvert, i);
+        }
+        return arrayStringToConvert;
+    }
+
+    /**
+     * Converts individual string in array to lower case.
+     * @param arrayToReplace
+     * @param arrayPosition
+     */
+    public void replaceStringInArrayToLowerCase(String[] arrayToReplace, int arrayPosition){
+        arrayToReplace[arrayPosition] = arrayToReplace[arrayPosition].toLowerCase();
+        return;
     }
 
     @Override
