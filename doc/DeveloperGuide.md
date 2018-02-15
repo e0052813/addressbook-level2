@@ -69,3 +69,8 @@
 * Problem: Test fails during the very first time.<br>
   Solution: The output of the very first test run could be slightly different because the program
   creates a new storage file. Tests should pass from the 2nd run onwards.
+
+### Non-Functional Requirements
+* AddressBook should cater to both people proficient in IT and those that do not know about coding.
+* AddressBook can remain open for long period of time without taking up too much of processing power. 
+* Confidential Information in Addressbook should not be easily accessible.
