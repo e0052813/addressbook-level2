@@ -4,7 +4,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
-import java.util.List;
 
 import org.junit.Test;
 
@@ -45,15 +44,40 @@ public class UtilsTest {
     }
 
     @Test
-    public void isAnyNull() {
+    public void isAnyNull() throws Exception {
 
         // no items
+        assertHasNull();
 
         // one item
+        assertHasNull("");
+        assertHasNull("1234");
+        assertHasNull("abcd");
+
         // multiple items
+        assertHasNull(1, 2, 3);
+        assertHasNull("abc", "def", "ghi");
+        assertHasNull(1, "abc");
+
         // one null item
+        assertNoNull(1, null);
+        assertNoNull("abc", null);
+        assertNoNull(1, "abc", null);
+
         // multiple null items
+        assertNoNull(null, null);
+        assertNoNull(null, null, null);
+        assertNoNull(1, 2, null, null);
+        assertNoNull("abc", "def", null, null);
+        assertNoNull(null, 1, null);
+        assertNoNull("abc", null, "abc", null);
     }
-    private void assertAreNull(Object... items){ assertTrue(Utils.isAnyNull(Arrays.asList(items)));}
-    private void assertNotNull (Object... items) { assertFalse(Utils.isAnyNull(Arrays.asList(items)));}
+
+    private void assertNoNull(Object... items) {
+        assertTrue(Utils.isAnyNull(items));
+    }
+
+    private void assertHasNull(Object... items) {
+        assertFalse(Utils.isAnyNull(items));
+    }
 }
